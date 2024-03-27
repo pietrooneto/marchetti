@@ -32,7 +32,6 @@ document.addEventListener('scroll', function(e){
     } else {
         body.classList.remove("scrolled")
     }
-    console.log(window.scrollY);
 });
 
 
@@ -71,3 +70,30 @@ let objs = [{
 
 
 
+
+
+
+/*  -----------------------------------------------------------------------------------------------
+  Scroll to
+--------------------------------------------------------------------------------------------------- */
+let links = document.querySelectorAll('.menu li a');
+
+links.forEach((link, i) => {
+    
+    link.addEventListener('click', function(event){
+        event.preventDefault();
+
+        let selector = this.getAttribute("href");
+        console.log(selector);
+
+        let selectorElement = document.querySelectorAll(selector);
+        console.log(selectorElement[0].offsetTop);
+
+        window.scroll({
+            top: selectorElement[0].offsetTop,
+            behavior: "smooth"
+        })
+
+    });
+
+});
