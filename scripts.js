@@ -22,8 +22,8 @@ btn.addEventListener('click', function(){
 
 
 
-
 let body = document.querySelector('body');
+
 document.addEventListener('scroll', function(e){
     if(window.scrollY > 200){
 
@@ -34,6 +34,24 @@ document.addEventListener('scroll', function(e){
     }
     console.log(window.scrollY);
 });
+
+
+let items = document.querySelectorAll('li');
+
+for (let item of items) {
+    item.addEventListener('click', function(){
+        this.classList.toggle("red");
+        console.log(this)
+    });
+}
+
+
+
+
+
+
+
+
 
 
 
